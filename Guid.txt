@@ -1,0 +1,46 @@
+1- Install Tailwind CSS 
+    -> npm install -D tailwindcss postcss autoprefixer
+
+2- Create your tailwind.config.js file
+    -> npx tailwindcss init
+
+3- Create postcss.config.js file 
+
+4- Add Tailwind to your PostCSS configuration
+    -> module.exports = {
+            plugins: {
+                tailwindcss: {},
+                autoprefixer: {},
+            }
+        }
+
+5- Configure your template paths
+    -> content: ["./src/**/*.{html,js}"]
+
+6- Create a Tailwind main css file
+    -> @tailwind base;
+       @tailwind components;
+       @tailwind utilities;
+
+7- init your project
+    -> npm init -y
+
+8- Add on package.json -> scripts
+    -> "build": "tailwind build -i Tailwind/main.css -o public/tailwind.css"
+    -> "watch": "tailwind build -i Tailwind/main.css -o public/tailwind.css -w"
+    or
+    -> "build": "postcss ./Tailwind/main.css -o public/tailwind.css"
+    -> "watch": "postcss ./Tailwind/main.css -o public/tailwind.css -w"
+
+9- Link tailwind.css file
+    -> Create a index.html file inside public folder
+    -> add this code on the header of html
+        -> <link rel="stylesheet" href="./tailwind.css">
+
+10- Watch Tailwind CSS
+    -> npm run watch
+
+11- Build Tailwind CSS
+    -> npm run build
+
+npx tailwindcss init --full
